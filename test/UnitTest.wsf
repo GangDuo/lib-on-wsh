@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package>
+    <job>
+    <?job error="True" debug="True" ?>
+        <runtime/>
+        <script language="JScript" src="../base64.js"/>
+        <script language="JScript" src="./base64Tests.js"/>
+        <script language="JScript">
+            <![CDATA[
+            ]]>
+        </script>
+    </job>
+</package>
