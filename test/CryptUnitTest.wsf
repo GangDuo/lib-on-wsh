@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package>
+<job>
+	<?job error="false" debug="false"?>
+    <reference object="ADODB.Stream" />
+	<script language="JScript" src="../Unicode.js" />
+	<script language="JScript" src="../Crypt.js" />
+	<script language="JScript">
+<![CDATA[
+var crypt = new Crypt(),
+    rsa = WScript.CreateObject("System.Security.Cryptography.RSACryptoServiceProvider"),
+    text = 'test',
+    // XMLでカギ情報を出力(true：秘密カギと公開カギを出力、false：公開カギのみ出力)
+    encrypted = crypt.encrypt(text, rsa.ToXmlString(false)),
+    decrypted = crypt.decrypt(encrypted, rsa.ToXmlString(true));
+
+WScript.Echo(text === Unicode.getString(decrypted));
+]]>
+	</script>
+</job>
+</package>
